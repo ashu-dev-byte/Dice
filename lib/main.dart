@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -35,26 +36,40 @@ class _DicePageState extends State<DicePage> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 135.0),
-      child: Row(
+      child: Column(
         children: <Widget>[
-          Expanded(
-            child: FlatButton(
-              onPressed: () {
-                setState(() {
-                  changeDiceFaces();
-                });
-              },
-              child: Image.asset("images/dice$leftdicenumber.png"),
-            ),
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: FlatButton(
+                  onPressed: () {
+                    setState(() {
+                      changeDiceFaces();
+                    });
+                  },
+                  child: Image.asset("images/dice$leftdicenumber.png"),
+                ),
+              ),
+              Expanded(
+                child: FlatButton(
+                  onPressed: () {
+                    setState(() {
+                      changeDiceFaces();
+                    });
+                  },
+                  child: Image.asset("images/dice$rightdicenumber.png"),
+                ),
+              ),
+            ],
           ),
-          Expanded(
-            child: FlatButton(
-              onPressed: () {
-                setState(() {
-                  changeDiceFaces();
-                });
-              },
-              child: Image.asset("images/dice$rightdicenumber.png"),
+          Padding(
+            padding: const EdgeInsets.only(top: 330.0),
+            child: Text(
+              "© Made by Ashu",
+              style: TextStyle(
+                fontSize: 16.0,
+                color: Colors.white,
+              ),
             ),
           ),
         ],
